@@ -49,13 +49,6 @@ Dieses Projekt beschränkt sich auf die grundlegenden Funktionen des Spiels: Anm
 - Nach dem Spielende erhalten die Spieler die Möglichkeit, entweder ein neues Spiel zu starten oder zurück in die Lobby zu kehren.
 - Eine entsprechende Benutzeroberfläche wird angezeigt, um die Auswahl zu ermöglichen.
 
-#### 3.1.5 Spielen gegen KI
-- Spieler können wählen, ob sie gegen einen anderen Spieler oder gegen eine KI spielen möchten.
-- Es gibt zwei Arten von KI:
-  - **Selbst programmierte KI**: Eine interne KI, die nach festgelegten Algorithmen agiert.
-  - **Externe KI (z.B. ChatGPT)**: Eine KI, die über eine API angesprochen wird, um Spielzüge zu berechnen und zu liefern.
-- Der Server muss in der Lage sein, Spielzüge der KI zu verarbeiten und entsprechend auf den Client zu reagieren.
-
 ### 3.2 Nicht-funktionale Anforderungen
 - **Performance**: Der Server muss mehrere gleichzeitige Spielinstanzen verwalten können.
 - **Benutzerfreundlichkeit**: Die Benutzeroberfläche muss intuitiv und leicht verständlich sein.
