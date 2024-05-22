@@ -1,0 +1,16 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts,tsx --exec vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.11"
+  }
+}
