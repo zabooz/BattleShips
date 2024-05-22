@@ -10,10 +10,10 @@ sequenceDiagram
 
     alt Erstelle Spielinstanz
         Client->>Server: Erstelle Spielinstanz (mit/ohne Passwort)
-        Server->>Server: Spielinstanz speichern
+        Server->>Server: Spielinstanz erstellen und speichern
         Server-->>Client: sendet SpielInstanz
     else Trete Spiel bei
-        Client->>Server: Trete Spiel bei (mit Passwort wenn nötig)
+        Client->>Server: Trette Spiel bei (mit Passwort wenn nötig)
         Server->>Server: Validiere Passwort
         Server-->>Client: Spiel Beitritt erlaubt, sendet Spielinstanz
     end
