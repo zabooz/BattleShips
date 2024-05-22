@@ -13,18 +13,18 @@ sequenceDiagram
         Server->>Server: Spielinstanz erstellen und speichern
         Server-->>Client: sendet SpielInstanz
     else Trete Spiel bei
-        Client->>Server: Trette Spiel bei (mit Passwort wenn nötig)
+        Client->>Server: trete Spiel bei (mit Passwort wenn nötig)
         Server->>Server: Validiere Passwort
         Server-->>Client: Spiel Beitritt erlaubt, sendet Spielinstanz
     end
-
+    
     Client->>Server: Ready check
     Server->>Server: Checken ob beide Spieler bereit
     Server-->>Client: Wenn beide bereit, startet spiel
 
     Client->>Server: Sendet Zug
-    Server->>Server: Updated SpielZustand
-    Server-->>Client2/AI: Sendet SpielZustand
+    Server->>Server: Updated Spielzustand
+    Server-->>Client2/AI: Sendet Spielzustand
     Client2/AI->>Server: Sendet Zug
 
     Server-->>Client: Spielende, mit Auswahl Rematch || Lobby

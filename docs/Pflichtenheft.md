@@ -26,10 +26,15 @@ Dieses Projekt beschränkt sich auf die grundlegenden Funktionen des Spiels: Anm
 #### 3.1.2 Lobby-Management
 - Nach erfolgreicher Anmeldung können Spieler der Spiellobby beitreten.
 - In der Lobby können Spieler einem Spiel beitreten oder eine neue Spielinstanz erstellen.
-- Spieler können ein Spiel erstellen und dabei Name der Instanz sowie optional Passwort festlegen.
+- Spieler können ein Spiel erstellen und dabei den Namen der Instanz sowie optional ein Passwort festlegen.
 - Spieler, die einem passwortgeschützten Spiel beitreten möchten, müssen das Passwort eingeben, um Zugang zu erhalten.
 - Die Lobby zeigt eine Liste der verfügbaren Spiele und deren Status.
 - Die Lobby hat einen Refresh-Button, mit dem die Liste der verfügbaren Spiele und deren Status aktualisiert werden kann.
+- Spieler können wählen, ob sie gegen einen anderen Spieler oder gegen eine KI spielen möchten.
+  - **Selbst programmierte KI:** Eine interne KI, die nach festgelegten Algorithmen agiert.
+  - **Externe KI (z.B. ChatGPT):** Eine KI, die über eine API angesprochen wird, um Spielzüge zu berechnen und zu liefern.
+- Der Server muss in der Lage sein, Spielzüge der KI zu verarbeiten und entsprechend auf den Client zu reagieren.
+
 
 #### 3.1.3 Player Handshake
 - Wenn ein Spieler einem Spiel beitritt, wird eine Anfrage an beide Spieler gesendet, ob sie bereit sind.
