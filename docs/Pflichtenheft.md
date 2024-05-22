@@ -26,7 +26,7 @@ Dieses Projekt beschränkt sich auf die grundlegenden Funktionen des Spiels: Anm
 #### 3.1.2 Lobby-Management
 - Nach erfolgreicher Anmeldung können Spieler der Spiellobby beitreten.
 - In der Lobby können Spieler einem Spiel beitreten oder eine neue Spielinstanz erstellen.
-- Spieler können ein Spiel erstellen und dabei ein Passwort festlegen, um die Spielinstanz zu sichern.
+- Spieler können ein Spiel erstellen und dabei Name der Instanz sowie optional Passwort festlegen.
 - Spieler, die einem passwortgeschützten Spiel beitreten möchten, müssen das Passwort eingeben, um Zugang zu erhalten.
 - Die Lobby zeigt eine Liste der verfügbaren Spiele und deren Status.
 - Die Lobby hat einen Refresh-Button, mit dem die Liste der verfügbaren Spiele und deren Status aktualisiert werden kann.
@@ -38,7 +38,7 @@ Dieses Projekt beschränkt sich auf die grundlegenden Funktionen des Spiels: Anm
 - Die Startdaten des Spiels werden an beide Clients übermittelt.
 
 #### 3.1.4 Spielverlauf und Spielende
-- Spieler setzen ihre Schiffe und geben Schusskoordinaten ein.
+- Spieler setzen ihre Schiffe und geben Schusskoordinaten durch Klick auf das Spielfeld der Benutzeroberfläche ein.
 - Der Server überprüft die Schüsse und gibt Rückmeldung, ob ein Schiff getroffen oder verfehlt wurde.
 - Der Spielstand wird aktualisiert und an beide Spieler übertragen.
 - Nach dem Spielende erhalten die Spieler die Möglichkeit, entweder ein neues Spiel zu starten oder zurück in die Lobby zu kehren.
@@ -100,7 +100,7 @@ Dieses Projekt beschränkt sich auf die grundlegenden Funktionen des Spiels: Anm
 3. **Client**: Empfang der Spielstartdaten nach Bestätigung der Bereitschaft.
 
 ### 5.4 Spielverlauf und Spielende
-1. **Client**: Spieler setzen ihre Schiffe und geben Schusskoordinaten ein.
+1. **Client**: Spieler setzen ihre Schiffe und geben Schusskoordinaten durch Klick auf das Spielfeld der Benutzeroberfläche ein.
 2. **Server**: Überprüfung der Schüsse, Aktualisierung des Spielstands, Rückmeldung an die Clients.
 3. **Client und Server**: Nach dem Spielende erhalten die Spieler die Möglichkeit, entweder ein neues Spiel zu starten oder zurück in die Lobby zu kehren. Eine entsprechende Benutzeroberfläche wird angezeigt, um die Auswahl zu ermöglichen.
 

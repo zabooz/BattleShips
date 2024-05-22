@@ -1,33 +1,34 @@
 
 ```mermaid
 sequenceDiagram
+    Client->>Server: Login (Username)
+    Server->>Server: Authentication
+    Server -->>Client: Login-Response (Ja || Nein)
 
+    Client->>Server: Lobby-Request
+    Server-->>Client: Lobby-Update (Liste aller Spiele)
 
-Client->>Server: Login (Username)
-Server->>Server: Authentification
-Server -->>Client: Login-Response (Success or Failure)
+    alt Erstelle Spielinstanz
+        Client->>Server: Erstelle Spielinstanz (mit/ohne Passwort)
+        Server->>Server: Spielinstanz speichern
+        Server-->>Client: sendet SpielInstanz
+    else Trete Spiel bei
+        Client->>Server: Trete Spiel bei (mit Passwort wenn nötig)
+        Server->>Server: Validiere Passwort
+        Server-->>Client: Spiel Beitritt erlaubt, sendet Spielinstanz
+    end
 
-Client->>Server: Lobby-Request
-Server-->>Client: Lobby-Update (List of available games)
+    Client->>Server: Ready check
+    Server->>Server: Checken ob beide Spieler bereit
+    Server-->>Client: Wenn beide bereit, startet spiel
 
-Client->>Server: Create new game (with or without password)
-Server->>Server: Create and store game
-Server-->>Client: Game created, response
+    Client->>Server: Sendet Zug
+    Server->>Server: Updated SpielZustand
+    Server-->>Client2/AI: Sendet SpielZustand
+    Client2/AI->>Server: Sendet Zug
 
-Client->>Server: Join game (with password if required)
-Server->>Server: Validate password (if needed)
-Server-->>Client: Access granted or denied
+    Server-->>Client: Spielende, mit Auswahl Rematch || Lobby
+    Client->>Server: Wählt Rematch oder Lobby
+    Server-->>Client: Neues Spiel wird erstellt oder zurück zu Lobby
 
-Client->>Server: Ready check
-Server->>Server: Verify readiness of both players
-Server-->>Client: Game start data
-
-Client->> Server: Sends move
-Server->>Server: Update game state
-Server-->>Client2/AI: Updated game state
-Client2/AI->> Server: Sends move
-
-Server-->>Client: End of game notification
-Client->>Server: Choose (new game or lobby)
-Server-->>Client: New game instance or lobby update
 ```
