@@ -21,13 +21,14 @@ Dieses Projekt beschränkt sich auf die grundlegenden Funktionen des Spiels: Anm
 
 #### 3.1.1 Anmeldung
 - Spieler können sich mit einem Benutzernamen einloggen.
+- Doppelter Name  --> uuid
 - Der Server authentifiziert die Spieler und gibt eine Bestätigung oder Fehlermeldung zurück.
 
 #### 3.1.2 Lobby-Management
 - Nach erfolgreicher Anmeldung können Spieler der Spiellobby beitreten.
 - In der Lobby können Spieler einem Spiel beitreten oder eine neue Spielinstanz erstellen.
-- Spieler können ein Spiel erstellen und dabei den Namen der Instanz sowie optional ein Passwort festlegen.
-- Spieler, die einem passwortgeschützten Spiel beitreten möchten, müssen das Passwort eingeben, um Zugang zu erhalten.
+<!-- - Spieler können ein Spiel erstellen und dabei den Namen der Instanz sowie optional ein Passwort festlegen. -->
+<!-- - Spieler, die einem passwortgeschützten Spiel beitreten möchten, müssen das Passwort eingeben, um Zugang zu erhalten. -->
 - Die Lobby zeigt eine Liste der verfügbaren Spiele und deren Status.
 - Die Lobby hat einen Refresh-Button, mit dem die Liste der verfügbaren Spiele und deren Status aktualisiert werden kann.
 - Spieler können wählen, ob sie gegen einen anderen Spieler oder gegen eine KI spielen möchten.
@@ -51,21 +52,21 @@ Dieses Projekt beschränkt sich auf die grundlegenden Funktionen des Spiels: Anm
 
 ### 3.2 Nicht-funktionale Anforderungen
 - **Performance**: Der Server muss mehrere gleichzeitige Spielinstanzen verwalten können.
-- **Benutzerfreundlichkeit**: Die Benutzeroberfläche muss intuitiv und leicht verständlich sein.
+<!-- - **Benutzerfreundlichkeit**: Die Benutzeroberfläche muss intuitiv und leicht verständlich sein. -->
 
 ## 4. Technische Spezifikationen
 
 ### 4.1 Technologien
 - **Programmiersprache**: TypeScript
-- **Frameworks**: Express für den Server, UIkit für den Client
-- **Validierung**: Joi zur Validierung von Anmeldedaten
-- **Datenbank**: Die Spiele werden zunächst am Server gespeichert, aber das System soll erweiterbar sein, um später eine Datenbank (z.B. PostgreSQL oder MongoDB) zu integrieren.
+- **Frameworks**: Express für den Server, tailWind für den Client
+- **Validierung**: Joi zur Validierung von sämtlichen api-kommunikation.
+- **Datenbank**: Die Spiele werden im Cache gespeicher und gehen verloren, aber das System soll erweiterbar sein, um später eine Datenbank (z.B. PostgreSQL oder MongoDB) zu integrieren.
 - **Kommunikationsprotokoll**: REST für die Kommunikation zwischen Client und Server
 - **UUID**: Spiel-IDs werden mit UUIDs (Universally Unique Identifiers) erstellt.
 
 ### 4.2 Systemarchitektur
 - **Client-Server-Architektur**: Der Client kommuniziert über REST-API-Endpunkte (HTTP/HTTPS) mit dem Server.
-- **KI-Integration**: 
+- **KI-Integration**: computer gegner modulare archtikture über schnitt stelle verschiedene gegner, eigen ki mit eigenen strategie
   - Selbst programmierte KI: Läuft auf dem Server und wird direkt angesprochen.
   - Externe KI (z.B. ChatGPT): Kommunikation über eine API (z.B. OpenAI API) zur Berechnung von Spielzügen.
 - **Datenfluss**:
